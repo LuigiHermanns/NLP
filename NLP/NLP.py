@@ -1,5 +1,4 @@
 import liwc
-import unicodedata
 
 parse, category_names = liwc.load_token_parser("./LIWC2007_Portugues_win.dic")
 
