@@ -82,10 +82,13 @@ def liwc_couting(parsed_text):
     result['swear_count'] = sum(1 for item in parsed_text if 'swear' in item)
     result['anx_count'] = sum(1 for item in parsed_text if 'anx' in item)
 
-    # Returns percentage value
-    result['posemo%'] = (sum(1 for item in parsed_text if 'posemo' in item) * 100) / result['word_count']
-    result['negemo%'] = (sum(1 for item in parsed_text if 'negemo' in item) *100 )/ result['word_count']
-
+    try:
+        # Returns percentage value
+        result['posemo%'] = (sum(1 for item in parsed_text if 'posemo' in item) * 100) / result['word_count']
+        result['negemo%'] = (sum(1 for item in parsed_text if 'negemo' in item) *100 )/ result['word_count']
+    except ZeroDivisionError:
+        result['posemo%'] = 0
+        result['negemo%'] = 0
     return result
 
 
@@ -107,9 +110,10 @@ def basic_analysis(text):
     print(f'Tom geral positivo: {resp_dict["posemo%"]}')
     print(f'Tom geral negativo: {resp_dict["negemo%"]}')
 
-basic_analysis(text_original)
-basic_analysis(text_original2)
 
+if __name__ == "__main__":
+    basic_analysis(text_original)
+    basic_analysis(text_original2)
 
    
 
