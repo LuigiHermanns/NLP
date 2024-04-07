@@ -1,0 +1,4 @@
+CLIENT_ID ='client_id'
+SECRET_KEY ='secret_key'
+REDDIT_USERNAME='username'
+REDDIT_PASSWORD='password'
