@@ -1,7 +1,4 @@
 import liwc
-import os
-
-
 
 parse, category_names = liwc.load_token_parser('./LIWC/LIWC2007_Portugues_win.dic')
 
@@ -104,8 +101,8 @@ def basic_analysis(text):
     print(f'Total de palavras: {resp_dict["word_count"]}')
     print(f'Palavras ofensivas: {resp_dict["swear_count"]}')
     print(f'Palavras ansiosas: {resp_dict["anx_count"]}')
-    print(f'Tom geral positivo: {resp_dict["posemo%"]}')
-    print(f'Tom geral negativo: {resp_dict["negemo%"]}')
+    print(f'Tom geral positivo: {resp_dict["posemo%"]} %')
+    print(f'Tom geral negativo: {resp_dict["negemo%"]} %')
 
 
 if __name__ == "__main__":
